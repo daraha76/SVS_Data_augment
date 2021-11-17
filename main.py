@@ -64,11 +64,21 @@ def time_stretch(orgdata_path, augdata_path, song_name, n=4):
 
         shutil.copy(os.path.join(orgdata_path, 'txt', song_name + '.txt'), os.path.join(augdata_path, 'txt', txt_file))
 
+def create_directory(base_directory):
+    dir_list = ['mid', 'txt', 'wav']
+    for dir_name in dir_list:
+        if not os.path.exists(os.path.join(base_directory, dir_name)):
+            os.makedirs(os.path.join(base_directory, dir_name))
+
 
 if __name__ == '__main__':
     orgdata_path = os.path.join(os.getcwd(), 'original_dataset')
     augdata_path_ps = os.path.join(os.getcwd(), 'aug_dataset', 'pitch_shift')
     augdata_path_ts = os.path.join(os.getcwd(), 'aug_dataset', 'time_stretch')
+
+    create_directory(orgdata_path)
+    create_directory(augdata_path_ps)
+    create_directory(augdata_path_ts)
 
     txt_list = os.listdir(os.path.join(orgdata_path, 'txt'))
     midi_list = os.listdir(os.path.join(orgdata_path, 'mid'))
