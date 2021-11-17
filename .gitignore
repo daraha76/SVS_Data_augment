@@ -1,12 +1,6 @@
 .idea
 compare.py
 compare_data
-aug_dataset/pitch_shift/txt/*
-aug_dataset/pitch_shift/mid/*
-aug_dataset/pitch_shift/wav/*
-aug_dataset/time_stretch/txt/*
-aug_dataset/time_stretch/mid/*
-aug_dataset/time_stretch/wav/*
-original_dataset/txt/*
-original_dataset/mid/*
-original_dataset/wav/*
+*.txt
+*.mid
+*.wav
